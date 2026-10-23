@@ -1,0 +1,50 @@
+# 密钥与本地配置
+.env
+.env.*
+*.local
+
+# 运行时数据(SQLite 数据库文件等)
+data/
+*.db
+*.db-journal
+*.db-wal
+*.db-shm
+
+# 内嵌资源内容(构建脚本拷入;仅保留占位)
+server/internal/assets/dist/*
+!server/internal/assets/dist/.gitkeep
+server/internal/assets/skills/*
+!server/internal/assets/skills/.gitkeep
+
+# 可视化头脑风暴工作区
+.superpowers/
+docs/superpowers
+
+# Go
+server/bin/
+/dist/
+
+# Node / 前端
+node_modules/
+web/dist/
+web/node_modules/
+e2e/node_modules/
+e2e/test-results/
+e2e/playwright-report/
+e2e/.e2e-data/
+
+# 编辑器/系统
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+
+# E2E 运行日志
+e2e/backend-launch.log
+
+# server 运行/构建产物
+server/logs/
+server/gbi.exe
+
+# playwright MCP browser-session artifacts
+.playwright-mcp/

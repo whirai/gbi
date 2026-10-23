@@ -1,0 +1,30 @@
+/*
+ * 固定列必须不透明:玻璃主题的 colorBgContainer 是半透明 rgba(255,255,255,0.72),
+ * 固定列若继承该背景,横向滚动时下方单元格会透出并叠字(实测表头/行内出现重影)。
+ * 同时给固定列加轻微投影,滚动时与内容区分。
+ */
+.gbi-rows-grid .ant-table-cell-fix-left,
+.gbi-rows-grid .ant-table-cell-fix-right {
+  background-color: #fff;
+}
+
+.gbi-rows-grid .ant-table-thead .ant-table-cell-fix-left,
+.gbi-rows-grid .ant-table-thead .ant-table-cell-fix-right {
+  background-color: #f8fafc;
+}
+
+/* 悬停时 antd 会给单元格加半透明 hover 色,固定列需用不透明近似色保持遮挡 */
+.gbi-rows-grid .ant-table-tbody > tr:hover > .ant-table-cell-fix-left,
+.gbi-rows-grid .ant-table-tbody > tr:hover > .ant-table-cell-fix-right,
+.gbi-rows-grid .ant-table-tbody > tr > .ant-table-cell-row-hover.ant-table-cell-fix-left,
+.gbi-rows-grid .ant-table-tbody > tr > .ant-table-cell-row-hover.ant-table-cell-fix-right {
+  background-color: #f0f9ff;
+}
+
+.gbi-rows-grid .ant-table-cell-fix-left {
+  box-shadow: 6px 0 10px -8px rgba(2, 132, 199, 0.28);
+}
+
+.gbi-rows-grid .ant-table-cell-fix-right {
+  box-shadow: -6px 0 10px -8px rgba(2, 132, 199, 0.28);
+}
